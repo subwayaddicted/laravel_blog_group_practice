@@ -3,9 +3,12 @@
 /public/storage
 /storage/*.key
 /vendor
+/storage/logs/apache_errors.log
+/storage/logs/apache_access.log
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
 .idea/
+composer.phar
