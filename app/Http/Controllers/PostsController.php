@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -21,11 +22,8 @@ class PostsController extends Controller
     {
         $categories = Category::all(array('id','title'));
 
-        // todo #view Добавить реального юзера
-        // $cur_user = Auth::user()
-        $cur_user = new User();
-        $cur_user->id = 1;
-
+        // реальный пользователь
+        $cur_user = Auth::user();
         return view('posts.create')->withCategories($categories)->with('user', $cur_user);
     }
 
