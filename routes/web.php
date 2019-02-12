@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/posts', 'PostsController@getAllPosts');
+
+Route::get('/{category_slug}', 'CategoryController@getPostsByCategory');
