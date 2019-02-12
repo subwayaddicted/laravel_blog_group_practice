@@ -22,6 +22,7 @@ class PostsController extends Controller
         $categories = Category::all(array('id','title'));
 
         // todo #view Добавить реального юзера
+        // $cur_user = Auth::user()
         $cur_user = new User();
         $cur_user->id = 1;
 
@@ -41,11 +42,13 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
-        return view('posts.edit', compact('post'));
+        $categories = Category::all(array('id','title'));
+
+        return view('posts.edit', compact('post'))->withCategories($categories);
     }
     public function update(Post $post)
     {
-        $post->update(['title','text','slug','category_id']);
+        $post->update(request(['title','text','slug','category_id']));
 
         return redirect('/posts');
     }
