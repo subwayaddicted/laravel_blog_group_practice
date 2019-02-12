@@ -1,11 +1,6 @@
-@extends('welcome')
+@extends('layouts.app')
 
-
-@section("main-content")
-
-    <pre>
-{{--    {{print_r($categories)}}--}}
-</pre>
+@section("content")
     <!-- Main Content -->
     <div class="container">
 
@@ -44,7 +39,7 @@
                 <textarea class="form-control" name="text" id="text" rows="10"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-default">Save</button>
+            <button type="submit" class="btn btn-success">Save</button>
         </form>
     </div>
 
