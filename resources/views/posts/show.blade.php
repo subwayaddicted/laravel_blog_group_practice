@@ -7,6 +7,8 @@
 	   			<h1>{{ $post->title }}</h1>
 	  			<p>{{ $post->text }}</p>
 	  		@else
+				<h1>{{ $post->title }}</h1>
+				<p>{{ $post->text }}</p>
 	    		@includeIf('posts.component.btn_post_edit',["post_id"=>$post->id])
 	    		@includeIf('posts.component.btn_post_delete',["post_id"=>$post->id])
 	    	@endguest
