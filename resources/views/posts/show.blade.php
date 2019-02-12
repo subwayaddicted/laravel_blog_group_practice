@@ -3,10 +3,15 @@
 @section('content')
 	<div class="container">
 		@if($post)
-	    <h1>{{ $post->title }}</h1>
-	    <p>{{ $post->text }}</p>
+			@guest
+	   			<h1>{{ $post->title }}</h1>
+	  			<p>{{ $post->text }}</p>
+	  		@else
+	    		@includeIf('posts.component.btn_post_edit',["post_id"=>$post->id])
+	    		@includeIf('posts.component.btn_post_delete',["post_id"=>$post->id])
+	    	@endguest
 	    @else 
-	    	<p>Such a post does not exist</p>
+	    	<p>Такого поста нет</p>
 	    @endif
     </div>
 @endsection
