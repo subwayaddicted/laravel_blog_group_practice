@@ -5,11 +5,18 @@
     <div class="container">
         <div class="row">
             <h1>Посты</h1>
-            <div>
-                @include('posts.component.btn_post_create')
-            </div>
         </div>
         <div class="row">
+
+            <div class="card col-md-4" style="background: #b6f68e;">
+                <a href="{{action('PostsController@create')}}" style="width: 100%; height: 100%; text-decoration:none;">
+                    <div class="card-body">
+                        <div style="text-align: center; font-size: 55px; position: absolute; top: 25%; left:20px">
+                            Добавить пост
+                        </div>
+                    </div>
+                </a>
+            </div>
             @foreach($posts as $post)
                 <div class="card col-md-4">
                     <div class="card-body">
