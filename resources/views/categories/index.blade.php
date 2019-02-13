@@ -22,7 +22,7 @@
                 <div class="card col-md-4">
                     <div class="card-body">
                         <h5 class="card-title">{{$category->title}}</h5>
-                        <a href="{{action('CategoryController@getPostsByCategory', array($category->slug))}}"
+                        <a href="{{action('CategoryController@show', array($category->slug))}}"
                            class="btn btn-primary">Показать посты этой категории</a>
                     </div>
                 </div>
