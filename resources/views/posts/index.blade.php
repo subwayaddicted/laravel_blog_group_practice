@@ -1,7 +1,19 @@
-@extends('layouts.app')
+@extends('user.app')
+
+@section('bg-img','user/img/home-bg.jpg')
+
+@section('head')
 
 
-@section('content')
+
+@endsection
+
+@section('title', 'Posts ')
+@section('sub-title', '')
+
+@section('main-content')
+
+
     <div class="container">
         <div class="row">
             <h1>Посты</h1>

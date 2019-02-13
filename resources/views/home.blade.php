@@ -1,6 +1,10 @@
-@extends('layouts.app')
+@extends('user.app')
 
-@section('content')
+@section('bg-img',asset('user/img/home-bg.jpg'))
+@section('title', 'You are logged in!')
+@section('sub-title', '')
+
+@section("main-content")
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
