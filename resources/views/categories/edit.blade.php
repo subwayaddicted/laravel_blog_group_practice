@@ -6,6 +6,7 @@
 
         <form class="form-horizontal" role="form" enctype="multipart/form-data" method="POST" id="category_create"
               action="{{ action('CategoryController@update',  array($category->id)) }}">
+            @method('PATCH')
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="_method" value="PATCH">
 
