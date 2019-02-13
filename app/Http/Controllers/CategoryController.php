@@ -24,7 +24,7 @@ class CategoryController extends Controller
         return redirect('/categories');
     }
 
-    public function getPostsByCategory($category_slug){
+    public function show($category_slug){
         $posts = Category::query()
             ->leftJoin('posts','posts.category_id','=','categories.id')
             ->select(
@@ -56,9 +56,9 @@ class CategoryController extends Controller
 
     public function update(Category $category)
     {
-        $category->update(request(['title','slug']));
+        $category->update(request(['title','slug',]));
 
-        return redirect('/posts');
+        return redirect('/categories');
     }
 
     public function destroy(Category $category)

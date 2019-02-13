@@ -5,10 +5,9 @@
     <div class="container">
 
         <form class="form-horizontal" role="form" enctype="multipart/form-data" method="POST" id="category_create"
-              action="{{ action('CategoryController@update',  array($category->id)) }}">
-            @method('PATCH')
+              action="{{ action('CategoryController@update',  array($category->slug)) }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="_method" value="PATCH">
+            <input type="hidden" name="_method" value="PUT">
 
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -28,4 +27,5 @@
             <button type="submit" class="btn btn-info">Update</button>
         </form>
     </div>
+
 @endsection
