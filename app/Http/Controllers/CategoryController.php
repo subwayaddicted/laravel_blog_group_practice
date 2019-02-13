@@ -6,6 +6,24 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+    public function index()
+    {
+        $categories = Category::all();
+
+        return view('categories.index', compact('categories'));
+    }
+
+    public function create()
+    {
+        return view('categories.create');
+    }
+
+    public function store()
+    {
+        Category::create(request(['title','slug']));
+        return redirect('/categories');
+    }
+
     public function getPostsByCategory($category_slug){
         $posts = Category::query()
             ->leftJoin('posts','posts.category_id','=','categories.id')
@@ -28,6 +46,25 @@ class CategoryController extends Controller
             'categories' => Category::all(),
             'posts' => $posts
         );
-        return view('category')->with('data', $data);
+        return view('categories.category')->with('data', $data);
+    }
+
+    public function edit(Category $category)
+    {
+        return view('categories.edit', compact('category'));
+    }
+
+    public function update(Category $category)
+    {
+        $category->update(request(['title','slug']));
+
+        return redirect('/posts');
+    }
+
+    public function destroy(Category $category)
+    {
+        $category->delete();
+
+        return redirect('/posts');
     }
 }

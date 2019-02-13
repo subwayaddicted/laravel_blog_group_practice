@@ -1,0 +1,1 @@
+<a class="btn btn-success" href="{{action('CategoryController@create')}}">Добавить категорию</a>
