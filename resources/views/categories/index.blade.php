@@ -26,8 +26,8 @@
                            class="btn btn-primary">Показать посты этой категории</a>
                         @guest  
                         @else
-                            @includeIf('category.component.btn_category_edit',["$category_slug"=>$category->slug])
-                            @includeIf('category.component.btn_category_delete',["$category_slug"=>$category->slug])
+                            @includeIf('category.component.btn_category_edit',["category_slug"=>$category->slug])
+                            @includeIf('category.component.btn_category_delete',["category_slug"=>$category->slug])
                         @endguest
                     </div>
                 </div>
