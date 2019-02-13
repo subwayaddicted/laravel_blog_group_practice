@@ -33,7 +33,8 @@ class CategoryController extends Controller
                 'posts.text',
                 'posts.slug AS slug',
                 'categories.slug AS cat_slug',
-                'posts.user_id'
+                'posts.user_id',
+                'posts.id'
             )
             ->where('categories.slug', '=', $category_slug)
             ->orderBy('posts.updated_at')

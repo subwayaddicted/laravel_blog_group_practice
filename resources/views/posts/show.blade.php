@@ -1,6 +1,17 @@
-@extends('layouts.app')
+@extends('user.app')
 
-@section('content')
+@section('bg-img','/user/img/home-bg.jpg')
+
+@section('head')
+
+
+
+@endsection
+
+@section('title',  $post->title)
+@section('sub-title', '')
+
+@section('main-content')
 	<div class="container">
 		@if($post)
 			@guest
