@@ -2,5 +2,5 @@
       action="{{ action('CategoryController@destroy',  array($category_slug)) }}" style="display: inline-block">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="_method" value="DELETE">
-    <button type="submit" class="btn btn-danger">Удалить</button>
+    <button type="submit" class="btn btn-danger">Delete</button>
 </form>

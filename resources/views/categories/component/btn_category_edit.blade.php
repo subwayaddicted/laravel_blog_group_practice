@@ -1,1 +1,1 @@
-<a class="btn btn-info" href="{{action('CategoryController@edit', array($category_slug))}}">Обновить</a>
+<a class="btn btn-info" href="{{action('CategoryController@edit', array($category_slug))}}">Edit</a>

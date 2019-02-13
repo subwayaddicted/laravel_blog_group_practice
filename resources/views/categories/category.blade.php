@@ -11,7 +11,7 @@
         <div class="container">
             <h3>{{ $post['title'] }}</h3>
             <p>{{ $post['text'] }}</p>
-            <a href="/posts/{{ $post['id'] }}">Читать далее...</a>
+            <a href="/posts/{{ $post['id'] }}">Continue...</a>
         </div>
     @endforeach
     </div>
