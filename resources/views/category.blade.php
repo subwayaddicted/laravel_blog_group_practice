@@ -24,7 +24,7 @@
         <div class="container">
             <h3>{{ $post['title'] }}</h3>
             <p>{{ $post['text'] }}</p>
-            <a href="/{{ $post['slug'] }}">Читать далее...</a>
+            <a href="/posts/{{ $post['id'] }}">Читать далее...</a>
         </div>
     @endforeach
         </div>
@@ -36,3 +36,5 @@
     @endsection
 
 
+    </div>
+@endsection
