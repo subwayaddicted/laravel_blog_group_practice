@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h1>Категории</h1>
+            <h1>Categories</h1>
         </div>
         <div class="row">
             @guest
@@ -13,7 +13,7 @@
                        style="width: 100%; height: 100%; text-decoration:none;">
                         <div class="card-body">
                             <div style="text-align: center; font-size: 30px; position: absolute; top: 25%; left:20px">
-                                Добавить категорию
+                                Add category
                             </div>
                         </div>
                     </a>
@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$category->title}}</h5>
                         <a href="{{action('CategoryController@show', array($category->slug))}}"
-                           class="btn btn-primary">Показать посты этой категории</a>
+                           class="btn btn-primary">Show posts of this category</a>
                         <div style="padding-top: 10px">
                             @guest
                             @else

@@ -16,7 +16,7 @@
 
     <div class="container">
         <div class="row">
-            <h1>Посты</h1>
+            <h1>Posts</h1>
         </div>
         <div class="row">
             @guest
@@ -25,7 +25,7 @@
                 <a href="{{action('PostsController@create')}}" style="width: 100%; height: 100%; text-decoration:none;">
                     <div class="card-body">
                         <div style="text-align: center; font-size: 55px; position: absolute; top: 25%; left:20px">
-                            Добавить пост
+                            Create new post
                         </div>
                     </div>
                 </a>
@@ -45,7 +45,7 @@
                             <p class="card-text">{{$post->text}}</p>
                         </div>
                         <a href="{{action('PostsController@show', array($post->id))}}"
-                           class="btn btn-primary">Подробней</a>
+                           class="btn btn-primary">Details</a>
 
                     </div>
                 </div>
