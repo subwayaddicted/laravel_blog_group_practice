@@ -6,23 +6,12 @@
 
 @section("main-content")
     <div class="container">
-        <div class="row">
-            <h1>Categories</h1>
-        </div>
-        <div class="row">
-            @guest
-            @else
-                <div class="card col-md-4" style="background: #b6f68e;">
-                    <a href="{{action('CategoryController@create')}}"
-                       style="width: 100%; height: 100%; text-decoration:none;">
-                        <div class="card-body">
-                            <div style="text-align: center; font-size: 30px; position: absolute; top: 25%; left:20px">
-                                Add category
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @endguest
+        <h1>Categories</h1>
+        @guest
+        @else
+        <a href="{{action('CategoryController@create')}}" class="btn btn-primary">Add category</a>
+        @endguest
+        <div class="row" style="margin-top: 15px;">
             @foreach($categories as $category)
                 <div class="card col-md-4">
                     <div class="card-body">

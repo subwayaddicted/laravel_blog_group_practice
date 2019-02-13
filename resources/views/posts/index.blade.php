@@ -15,22 +15,12 @@
 
 
     <div class="container">
-        <div class="row">
-            <h1>Posts</h1>
-        </div>
-        <div class="row">
-            @guest
-            @else
-            <div class="card col-md-4" style="background: #b6f68e;">
-                <a href="{{action('PostsController@create')}}" style="width: 100%; height: 100%; text-decoration:none;">
-                    <div class="card-body">
-                        <div style="text-align: center; font-size: 55px; position: absolute; top: 25%; left:20px">
-                            Create new post
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endguest
+        <h1>Posts</h1>
+        @guest
+        @else
+        <a href="{{action('PostsController@create')}}" class="btn btn-primary">Create new post</a>
+        @endguest
+        <div class="row" style="margin-top: 15px;">
             @foreach($posts as $post)
                 <div class="card col-md-4">
                     <div class="card-body">
