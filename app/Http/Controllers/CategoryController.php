@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Post;
 
 class CategoryController extends Controller
 {
@@ -63,6 +64,7 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+        Post::where('category_id', '=', $category->id)->delete();
         $category->delete();
 
         return redirect('/posts');
