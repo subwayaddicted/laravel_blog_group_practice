@@ -24,9 +24,9 @@ class UsersTableSeeder extends Seeder
 
 
     	$categories_arr = [
-    		['Космос', 'kosmos'],
-    		['Стиль', 'stil'],
-    		['Природа', 'priroda']
+    		['Space', 'space'],
+    		['Style', 'style'],
+    		['Nature', 'nature']
     	];
 
     	foreach ($categories_arr as $category_key => $category_value) {
