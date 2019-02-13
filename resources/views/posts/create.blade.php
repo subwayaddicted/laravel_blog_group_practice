@@ -1,6 +1,17 @@
-@extends('layouts.app')
+@extends('user.app')
 
-@section("content")
+@section('bg-img','user/img/home-bg.jpg')
+
+@section('head')
+
+
+
+@endsection
+
+@section('title', 'Create Post ')
+@section('sub-title', '')
+
+@section('main-content')
     <!-- Main Content -->
     <div class="container">
 

@@ -11,14 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'MainController@index')->name('home');
+Route::get('/about', function () {
+    return view('about');
 });
 
 Auth::routes();
-
+Route::get('contact','ContactController@index')->name('contact');
+Route::post('contact','ContactController@store');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts','PostsController');
 
 Route::get('/{category_slug}', 'CategoryController@getPostsByCategory');
+
