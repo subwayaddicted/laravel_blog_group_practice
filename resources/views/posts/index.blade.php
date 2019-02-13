@@ -19,7 +19,8 @@
             <h1>Посты</h1>
         </div>
         <div class="row">
-
+            @guest
+            @else
             <div class="card col-md-4" style="background: #b6f68e;">
                 <a href="{{action('PostsController@create')}}" style="width: 100%; height: 100%; text-decoration:none;">
                     <div class="card-body">
@@ -29,6 +30,7 @@
                     </div>
                 </a>
             </div>
+            @endguest
             @foreach($posts as $post)
                 <div class="card col-md-4">
                     <div class="card-body">
