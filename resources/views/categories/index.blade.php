@@ -24,9 +24,14 @@
                         <h5 class="card-title">{{$category->title}}</h5>
                         <a href="{{action('CategoryController@getPostsByCategory', array($category->slug))}}"
                            class="btn btn-primary">Показать посты этой категории</a>
+                        @guest  
+                        @else
+                            @includeIf('category.component.btn_category_edit',["$category_slug"=>$category->slug])
+                            @includeIf('category.component.btn_category_delete',["$category_slug"=>$category->slug])
+                        @endguest
                     </div>
                 </div>
             @endforeach
-        </div>
+        </div> 
     </div>
 @endsection
