@@ -25,6 +25,14 @@ class CategoryController extends Controller
     }
 
     public function show($category_slug){
+        $categories = Category::query()
+            ->select('title')
+            ->where('slug', '=', $category_slug)
+            ->get();
+
+        if(count($categories) == 0) return abort(404);
+
+
         $posts = Category::query()
             ->leftJoin('posts','posts.category_id','=','categories.id')
             ->select(
