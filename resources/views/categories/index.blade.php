@@ -6,6 +6,8 @@
             <h1>Категории</h1>
         </div>
         <div class="row">
+            @guest
+            @else
             <div class="card col-md-4" style="background: #b6f68e;">
                 <a href="{{action('CategoryController@create')}}" style="width: 100%; height: 100%; text-decoration:none;">
                     <div class="card-body">
@@ -15,6 +17,7 @@
                     </div>
                 </a>
             </div>
+             @endguest
             @foreach($categories as $category)
                 <div class="card col-md-4">
                     <div class="card-body">
