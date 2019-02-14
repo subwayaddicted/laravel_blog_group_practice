@@ -21,4 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts','PostsController');
 
+Route::get('/categories', 'CategoryController@index');
+Route::get('/categories/create', 'CategoryController@create');
+Route::post('/categories', 'CategoryController@store');
 Route::get('/{category_slug}', 'CategoryController@getPostsByCategory');
+Route::get('/categories/{category_slug}/edit', 'CategoryController@edit');
+Route::patch('/categories/{category_slug}', 'CategoryController@update');
+Route::delete('/categories/{category_slug}', 'CategoryController@destroy');
